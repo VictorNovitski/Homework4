@@ -5,13 +5,20 @@
 // 9012 -> 12
 
 
-Console.WriteLine("Введите число: ");
-int i = Convert.ToInt32(Console.ReadLine());
-int sum = 0;
-while (i > 0)
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+static int GetSum(int number)
 {
-    int num = i % 10;
-    i = i / 10;
-    sum = sum + num;
+    int counter = Convert.ToString(number).Length;
+    int res = 0;
+    int result = 0;
+
+    for (int i = 0; i < counter; i++)
+    {
+        res = number - number % 10;
+        result = result + (number - res);
+        number = number / 10;
+    }
+    return result;
 }
-Console.WriteLine("Сумма цифр в числе равна: " + sum);
+Console.WriteLine("Сумма цифр в числе: " + GetSum(number));
