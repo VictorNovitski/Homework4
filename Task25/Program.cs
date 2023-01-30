@@ -8,5 +8,10 @@ Console.WriteLine("введите число A");
 int A = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите число B");
 int B = Convert.ToInt32(Console.ReadLine());
-int stepen = Convert.ToInt32(Math.Pow(A, B));
+int stepen = A;
+
+for (int i = 1; i < B; i++)
+{
+    stepen = stepen * A;
+}
 Console.WriteLine("A в степени B равно: " + stepen);
